@@ -1,18 +1,17 @@
-package entity;
+package box.organizer.box_organizer.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.util.UUID;
 import java.lang.String;
 import java.lang.Long;
 
-
+@Entity
+@Table(name="address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(length = 255, nullable = true)
     private String street;
@@ -29,11 +28,11 @@ public class Address {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

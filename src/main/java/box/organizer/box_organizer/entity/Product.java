@@ -1,18 +1,20 @@
-package entity;
+package box.organizer.box_organizer.entity;
 
 
 
-import enums.PaymentMethod;
+import box.organizer.box_organizer.enums.PaymentMethod;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
+@Table(name="product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -23,17 +25,21 @@ public class Product {
     @Column(name = "payment_method")
     private PaymentMethod paymentMethod;
 
+    @Column(name = "date")
     private LocalDate date;
+
+    @Column(name="name")
+    private String name;
 
     @OneToOne
     @JoinColumn(name = "idUser", unique = true)
     private User user;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -67,6 +73,14 @@ public class Product {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public User getUser() {

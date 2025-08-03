@@ -1,8 +1,9 @@
-package entity;
+package box.organizer.box_organizer.entity;
 
 
 import jakarta.persistence.*;
-import java.util.*;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
@@ -10,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(name="name")
     private String name;
@@ -26,11 +27,11 @@ public class User {
     private Product product;
 
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

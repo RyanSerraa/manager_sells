@@ -1,9 +1,9 @@
-package service;
+package box.organizer.box_organizer.service;
 
-import entity.Address;
+import box.organizer.box_organizer.entity.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AddressRepository;
+import box.organizer.box_organizer.repository.AddressRepository;
 
 @Service
 public class AddressService {
