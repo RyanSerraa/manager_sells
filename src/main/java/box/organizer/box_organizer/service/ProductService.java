@@ -1,9 +1,9 @@
-package service;
+package box.organizer.box_organizer.service;
 
-import entity.Product;
+import box.organizer.box_organizer.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ProductRepository;
+import box.organizer.box_organizer.repository.ProductRepository;
 
 import java.util.Date;
 
@@ -17,8 +17,8 @@ public class ProductService {
         this.repository = repository;
     }
 
-    public Product findByProduct(String product){
-        return repository.findByProduct(product);
+    public Product findByProduct(String name){
+        return repository.findByName(name);
     }
 
     public Product findByDate(Date date){

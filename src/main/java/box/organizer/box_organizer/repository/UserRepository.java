@@ -1,6 +1,6 @@
-package repository;
+package box.organizer.box_organizer.repository;
 
-import entity.User;
+import box.organizer.box_organizer.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

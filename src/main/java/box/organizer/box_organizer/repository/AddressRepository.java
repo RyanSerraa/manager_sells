@@ -1,6 +1,6 @@
-package repository;
+package box.organizer.box_organizer.repository;
 
-import entity.Address;
+import box.organizer.box_organizer.entity.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
