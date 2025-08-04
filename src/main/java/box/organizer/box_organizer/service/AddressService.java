@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import box.organizer.box_organizer.repository.AddressRepository;
 
+import java.util.List;
+
 @Service
 public class AddressService {
     private AddressRepository repository;
@@ -18,6 +20,7 @@ public class AddressService {
         return repository.findByStreet(street);
     }
 
+    public List<Address> findAll(){ return repository.findAll();}
     public Address findByCity(String city){
         return repository.findByCity(city);
     }

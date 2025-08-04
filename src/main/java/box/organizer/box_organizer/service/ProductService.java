@@ -1,11 +1,13 @@
 package box.organizer.box_organizer.service;
 
+import box.organizer.box_organizer.entity.Address;
 import box.organizer.box_organizer.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import box.organizer.box_organizer.repository.ProductRepository;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -17,6 +19,8 @@ public class ProductService {
         this.repository = repository;
     }
 
+    public List<Product> findAll(){ return repository.findAll();}
+
     public Product findByName(String name){
         return repository.findByName(name);
     }
@@ -24,6 +28,7 @@ public class ProductService {
     public Product findByDate(Date date){
         return repository.findByDate(date);
     }
+
     public Product saveProduct(Product product){
       return  repository.save(product);
     }
