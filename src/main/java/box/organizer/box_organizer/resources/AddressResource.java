@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import box.organizer.box_organizer.service.AddressService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/address")
 public class AddressResource {
 
     @Autowired
     AddressService service;
 
-    @PostMapping("/address")
+    @PostMapping
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){
         return ResponseEntity.status(201).body(service.saveAddress(address));
     }
