@@ -23,10 +23,6 @@ public class User {
     @JoinColumn(name = "idAddress")
     private Address address;
 
-    @OneToOne(mappedBy = "user")
-    private Product product;
-
-
     public UUID getId() {
         return id;
     }
@@ -59,14 +55,6 @@ public class User {
         this.address = address;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -74,7 +62,6 @@ public class User {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", address=" + address +
-                ", product=" + product +
                 '}';
     }
 }
