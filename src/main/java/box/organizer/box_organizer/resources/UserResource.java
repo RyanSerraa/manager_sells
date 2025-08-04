@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/user")
 public class UserResource {
@@ -15,6 +17,11 @@ public class UserResource {
     @PostMapping
     public ResponseEntity<User> saveUser(@RequestBody User user){
         return ResponseEntity.status(201).body(service.saveUsers(user));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<User>> findAll(){
+        return ResponseEntity.ok().body(service.findAll());
     }
 
     @GetMapping("/name")
