@@ -28,4 +28,15 @@ public class UserResource {
     public ResponseEntity<User> findByName(@RequestParam String name){
         return ResponseEntity.ok().body(service.findByName(name));
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<User> login(@RequestBody UserDTO userDTO){
+        User user = service.login(userDTO.email(), userDTO.password());
+        if(user == null){
+            return ResponseEntity.status(401).build();
+        }
+        return ResponseEntity.ok(user);
+    }
+
+    private record UserDTO( String email, String password){}
 }
